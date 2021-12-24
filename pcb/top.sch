@@ -73,17 +73,6 @@ $EndComp
 Wire Wire Line
 	5850 1450 5850 1350
 Connection ~ 5850 1450
-$Comp
-L Device:D_Bridge_+-AA D?
-U 1 1 61C557BE
-P 2050 1750
-F 0 "D?" V 1950 2000 50  0000 L CNN
-F 1 "D_Bridge_+-AA" V 1850 1850 50  0000 L CNN
-F 2 "" H 2050 1750 50  0001 C CNN
-F 3 "~" H 2050 1750 50  0001 C CNN
-	1    2050 1750
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	5050 1750 5050 2050
 Connection ~ 5050 2050
@@ -103,17 +92,9 @@ Wire Wire Line
 Connection ~ 4250 1450
 Wire Wire Line
 	4250 1450 4750 1450
-Wire Wire Line
-	2350 1750 2450 1750
-Wire Wire Line
-	2450 1750 2450 1150
-Wire Wire Line
-	2450 1150 1300 1150
-Wire Wire Line
-	1750 1750 1300 1750
 Text Label 1350 1150 0    50   ~ 0
 J
-Text Label 1350 1750 0    50   ~ 0
+Text Label 1350 2200 0    50   ~ 0
 K
 $Comp
 L power:+15V #PWR?
@@ -867,12 +848,7 @@ Connection ~ 3500 2550
 Wire Wire Line
 	3600 3250 2800 3250
 Wire Wire Line
-	2050 2050 2800 2050
-Wire Wire Line
-	2050 1450 3000 1450
-Wire Wire Line
 	2800 2050 2800 3250
-Connection ~ 2800 2050
 Wire Wire Line
 	2800 2050 4250 2050
 Wire Wire Line
@@ -894,12 +870,12 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x01 J?
 U 1 1 61C6B7B8
-P 1100 1750
-F 0 "J?" H 1018 1525 50  0000 C CNN
-F 1 "Conn_01x01" H 1018 1616 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1100 1750 50  0001 C CNN
-F 3 "~" H 1100 1750 50  0001 C CNN
-	1    1100 1750
+P 1100 2200
+F 0 "J?" H 1018 1975 50  0000 C CNN
+F 1 "Conn_01x01" H 1018 2066 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1100 2200 50  0001 C CNN
+F 3 "~" H 1100 2200 50  0001 C CNN
+	1    1100 2200
 	-1   0    0    1   
 $EndComp
 Text Label 6700 5250 0    50   ~ 0
@@ -968,4 +944,123 @@ Wire Wire Line
 	3800 1450 4250 1450
 Wire Wire Line
 	3000 1450 3500 1450
+$Comp
+L Diode:1N4007 D?
+U 1 1 61C6E829
+P 2050 1450
+F 0 "D?" H 2050 1667 50  0000 C CNN
+F 1 "1N4007" H 2050 1576 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 2050 1275 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2050 1450 50  0001 C CNN
+	1    2050 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D?
+U 1 1 61C6EC88
+P 2550 1450
+F 0 "D?" H 2550 1667 50  0000 C CNN
+F 1 "1N4007" H 2550 1576 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 2550 1275 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2550 1450 50  0001 C CNN
+	1    2550 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D?
+U 1 1 61C6F498
+P 2550 1800
+F 0 "D?" H 2550 2017 50  0000 C CNN
+F 1 "1N4007" H 2550 1926 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 2550 1625 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2550 1800 50  0001 C CNN
+	1    2550 1800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4007 D?
+U 1 1 61C6DEAF
+P 2050 1800
+F 0 "D?" H 2050 2017 50  0000 C CNN
+F 1 "1N4007" H 2050 1926 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 2050 1625 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2050 1800 50  0001 C CNN
+	1    2050 1800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1450 2800 1450
+Wire Wire Line
+	2400 1450 2300 1450
+Wire Wire Line
+	2200 1800 2300 1800
+Wire Wire Line
+	2800 2050 1800 2050
+Wire Wire Line
+	1800 2050 1800 1800
+Wire Wire Line
+	1800 1450 1900 1450
+Connection ~ 2800 2050
+Wire Wire Line
+	1900 1800 1800 1800
+Connection ~ 1800 1800
+Wire Wire Line
+	1800 1800 1800 1450
+Wire Wire Line
+	2700 1800 2800 1800
+Wire Wire Line
+	2800 1800 2800 1450
+Connection ~ 2800 1450
+Wire Wire Line
+	2800 1450 2700 1450
+Wire Wire Line
+	1300 1150 1450 1150
+Wire Wire Line
+	2300 1150 2300 1450
+Connection ~ 2300 1450
+Wire Wire Line
+	2300 1450 2200 1450
+Wire Wire Line
+	1300 2200 1450 2200
+Wire Wire Line
+	2300 2200 2300 1800
+Connection ~ 2300 1800
+Wire Wire Line
+	2300 1800 2400 1800
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 61CE3E32
+P 1100 2350
+F 0 "J?" H 1018 2125 50  0000 C CNN
+F 1 "Conn_01x01" H 1018 2216 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1100 2350 50  0001 C CNN
+F 3 "~" H 1100 2350 50  0001 C CNN
+	1    1100 2350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 61CEB4C6
+P 1100 1300
+F 0 "J?" H 1018 1075 50  0000 C CNN
+F 1 "Conn_01x01" H 1018 1166 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1100 1300 50  0001 C CNN
+F 3 "~" H 1100 1300 50  0001 C CNN
+	1    1100 1300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 1300 1450 1300
+Wire Wire Line
+	1450 1300 1450 1150
+Connection ~ 1450 1150
+Wire Wire Line
+	1450 1150 2300 1150
+Wire Wire Line
+	1300 2350 1450 2350
+Wire Wire Line
+	1450 2350 1450 2200
+Connection ~ 1450 2200
+Wire Wire Line
+	1450 2200 2300 2200
 $EndSCHEMATC
