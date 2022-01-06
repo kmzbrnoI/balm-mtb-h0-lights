@@ -22,6 +22,7 @@ F 1 "L78L05_SOT89" H 5350 1601 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-89-3_Handsoldering" H 5350 1650 50  0001 C CIN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf" H 5350 1400 50  0001 C CNN
 F 4 "C71136" H 5350 1450 50  0001 C CNN "LCSC"
+F 5 "0;0;180" H 5350 1450 50  0001 C CNN "JLCPCB_CORRECTION"
 	1    5350 1450
 	1    0    0    -1  
 $EndComp
@@ -711,7 +712,7 @@ F 4 "C2128" H 3950 1450 50  0001 C CNN "LCSC"
 	1    3950 1450
 	-1   0    0    1   
 $EndComp
-Text Notes 6500 1800 0    50   ~ 0
+Text Notes 6300 1550 0    50   ~ 0
 Napájení pouze pro procesor,\nmusí vydržet delší výpadek!
 $Comp
 L Diode:1N4007 D6
@@ -781,7 +782,7 @@ F 0 "R1" V 4257 2900 50  0000 C CNN
 F 1 "100R" V 4166 2900 50  0000 C CNN
 F 2 "Resistor_SMD:R_1812_4532Metric_Pad1.30x3.40mm_HandSolder" V 3980 2900 50  0001 C CNN
 F 3 "~" H 4050 2900 50  0001 C CNN
-F 4 "C17408" H 4050 2900 50  0001 C CNN "LCSC"
+F 4 "" H 4050 2900 50  0001 C CNN "LCSC"
 	1    4050 2900
 	0    1    -1   0   
 $EndComp
