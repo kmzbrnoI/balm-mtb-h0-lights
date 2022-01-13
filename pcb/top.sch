@@ -1335,4 +1335,8 @@ Wire Wire Line
 	9850 4200 9850 4100
 Wire Wire Line
 	9450 4200 9450 4100
+Text Notes 10050 3200 0    50   ~ 0
+3.2 V per LED\n9.6 V total
+Text Notes 10050 4350 0    50   ~ 0
+cca 6.4 V
 $EndSCHEMATC
