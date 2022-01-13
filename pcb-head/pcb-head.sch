@@ -35,29 +35,36 @@ F 3 "~" H 5850 3950 50  0001 C CNN
 	1    5850 3950
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J1
-U 1 1 61E06448
-P 4750 3950
-F 0 "J1" H 4668 4167 50  0000 C CNN
-F 1 "Conn_01x02" H 4668 4076 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4750 3950 50  0001 C CNN
-F 3 "~" H 4750 3950 50  0001 C CNN
-	1    4750 3950
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	6000 3950 6450 3950
 Wire Wire Line
 	4950 3950 5700 3950
+Text Label 5150 3950 0    50   ~ 0
+-
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 61E0A746
+P 4750 3950
+F 0 "J1" H 4668 3725 50  0000 C CNN
+F 1 "Conn_01x01" H 4668 3816 50  0000 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 4750 3950 50  0001 C CNN
+F 3 "~" H 4750 3950 50  0001 C CNN
+	1    4750 3950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 61E0AABC
+P 7550 3950
+F 0 "J2" H 7550 3700 50  0000 C CNN
+F 1 "Conn_01x01" H 7550 3800 50  0000 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm" H 7550 3950 50  0001 C CNN
+F 3 "~" H 7550 3950 50  0001 C CNN
+	1    7550 3950
+	1    0    0    1   
+$EndComp
 Wire Wire Line
-	4950 4050 5050 4050
-Wire Wire Line
-	5050 4050 5050 4200
-Wire Wire Line
-	5050 4200 6900 4200
-Wire Wire Line
-	6900 4200 6900 3950
-Wire Wire Line
-	6900 3950 6750 3950
+	6750 3950 7350 3950
+Text Label 7150 3950 0    50   ~ 0
++
 $EndSCHEMATC
