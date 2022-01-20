@@ -10,7 +10,7 @@ panel.kicad_pcb: pcb-head.kicad_pcb Makefile
 		pcb-head.kicad_pcb panel.kicad_pcb
 
 fab: panel.kicad_pcb Makefile
-	kikit fab jlcpcb panel.kicad_pcb fab
+	kikit fab jlcpcb --no-drc panel.kicad_pcb fab
 
 clean:
 	rm -f panel.kicad_pcb
