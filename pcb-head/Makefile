@@ -1,9 +1,12 @@
 all: panel.kicad_pcb fab
 
 panel.kicad_pcb: pcb-head.kicad_pcb Makefile
-	kikit panelize grid \
-		--space 3 --gridsize 7 3 --tabwidth 3 --tabheight 2 --radius 1 \
-		--mousebites 0.3 0.6 0 --vtabs 2 \
+	kikit panelize \
+		--layout 'grid; rows: 7; cols: 3; space: 3mm' \
+		--tabs annotation \
+		--cuts 'mousebites; drill: 0.3mm; spacing: 0.6 mm; prolong: 0.5mm' \
+		--post 'millradius: 1mm' \
+		--source 'tolerance: 15mm' \
 		pcb-head.kicad_pcb panel.kicad_pcb
 
 fab: panel.kicad_pcb Makefile
