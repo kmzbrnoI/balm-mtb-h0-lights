@@ -506,7 +506,7 @@ Mux0:
 		btfss	STATUS,Z
 		goto	Mux1
 		btfsc	OUTPUT,OUT1
-		bsf	GPIO,OUT1
+		nop ;bsf	GPIO,OUT1
 Mux1:
 		xorlw	(0x04 ^ 0x03)
 		btfss	STATUS,Z
@@ -552,7 +552,7 @@ FlashingOn0:
 FlashingOff0:
 		bsf	OUTPUT,OUT1
 		btfss	MUX
-		bsf	GPIO,OUT1
+		nop ;bsf	GPIO,OUT1
 		decfsz	FLCNT0,f
 		goto	Flashing1
 		bcf	FLSHOOT0
@@ -939,6 +939,7 @@ FuncSet2:
 		btfss	COUNT,3
 		goto	FuncSet
 		movf	OUTPUT,w
+		andlw	0xFE			; Disallow output GP0
 		btfss	MUX
 		movwf	GPIO
 		movf	F1F8SET,w
@@ -1041,6 +1042,7 @@ FluorOn:
 		bsf	FLSHOOT3		; start shooting sequence
 
 		movf	OUTPUT,w
+		andlw	0xFE			; Disallow output GP0
 		movwf	GPIO
 		bsf	LASTLT
 		return
