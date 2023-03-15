@@ -75,10 +75,10 @@ E_DEF_8         equ     0x0D                    ; manufacturer = DIY
 E_DEF_17        equ     0xC0                    ; long addr H
 E_DEF_19        equ     0x00                    ; consist
 E_DEF_29        equ     0x06                    ; config (short, F1-F4)
-E_DEF_33        equ     0x01                    ; F0F
-E_DEF_34        equ     0x02                    ; F0R
-E_DEF_3536      equ     0x10                    ; F1
-E_DEF_3738      equ     0x20                    ; F2
+E_DEF_33        equ     0x10                    ; F0F
+E_DEF_34        equ     0x20                    ; F0R
+E_DEF_3536      equ     0x02                    ; F1
+E_DEF_3738      equ     0x00                    ; F2
 
 
 #define         OUT1    0                       ;
@@ -1225,12 +1225,12 @@ ResetCV:
                 movlw   E_CV29                  ; CV29
                 call    SetParm
 
-                movlw   0x01
+                movlw   E_DEF_33
                 movwf   EEDATA0
                 movlw   E_CV33
                 call    SetParm
 
-                movlw   0x02
+                movlw   E_DEF_34
                 movwf   EEDATA0
                 movlw   E_CV34
                 call    SetParm
