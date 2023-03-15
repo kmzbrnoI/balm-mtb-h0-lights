@@ -71,21 +71,21 @@ BLIK_DIV_P      equ     0x82                    ; blink divider preset (×3,84 ms
 
 E_DEF_1ex       equ     0x03                    ; short addr, long addr L, analog
 E_DEF_7         equ     0x16                    ; version = 22
-E_DEF_8         equ     0x0D                    ; manufacturer = DIY  
+E_DEF_8         equ     0x0D                    ; manufacturer = DIY
 E_DEF_17        equ     0xC0                    ; long addr H
 E_DEF_19        equ     0x00                    ; consist
 E_DEF_29        equ     0x06                    ; config (short, F1-F4)
 E_DEF_33        equ     0x01                    ; F0F
 E_DEF_34        equ     0x02                    ; F0R
-E_DEF_3536      equ     0x10                    ; F1 
+E_DEF_3536      equ     0x10                    ; F1
 E_DEF_3738      equ     0x20                    ; F2
 
 
-#define         OUT1    0                       ; 
-#define         OUT2    1                       ; 
+#define         OUT1    0                       ;
+#define         OUT2    1                       ;
 #define         DCCIN   GPIO,2                  ; DCC input pin
-#define         OUT4    4                       ; 
-#define         OUT5    5                       ; 
+#define         OUT4    4                       ;
+#define         OUT5    5                       ;
 
 
 ; --- EEPROM Section
@@ -148,14 +148,14 @@ F1F8SET         equ     RAMINI0+0x0C
 ;FSET           equ     RAMINI0+0x0E
 ;FCHG           equ     RAMINI0+0x0F
 
-CV1             equ     RAMINI0+0x10            ; 
-CV7             equ     RAMINI0+0x11            ; 
-CV8             equ     RAMINI0+0x12            ; 
-CV13            equ     RAMINI0+0x13            ; 
-CV14            equ     RAMINI0+0x14            ; 
-CV17            equ     RAMINI0+0x15            ; 
-CV18            equ     RAMINI0+0x16            ; 
-CV19            equ     RAMINI0+0x17            ; 
+CV1             equ     RAMINI0+0x10            ;
+CV7             equ     RAMINI0+0x11            ;
+CV8             equ     RAMINI0+0x12            ;
+CV13            equ     RAMINI0+0x13            ;
+CV14            equ     RAMINI0+0x14            ;
+CV17            equ     RAMINI0+0x15            ;
+CV18            equ     RAMINI0+0x16            ;
+CV19            equ     RAMINI0+0x17            ;
 CV29            equ     RAMINI0+0x18            ; config
 
 CV33            equ     RAMINI0+0x19            ; F0F
@@ -177,7 +177,7 @@ CV48            equ     RAMINI0+0x28            ; F7R
 CV49            equ     RAMINI0+0x29            ; F8F
 CV50            equ     RAMINI0+0x2A            ; F8R
 CV51            equ     RAMINI0+0x2B            ; blik speed
- 
+
 
 TEMP            equ     RAMINI0+0x2C
 COUNT           equ     RAMINI0+0x2D
@@ -295,7 +295,7 @@ Preamble:
                 btfsc   STATUS,C                ;                                       ;18
                 incf    DCCSTATE,f              ; yes, next state                       ;19
                 goto    EndHighHalf             ;                                       ;20,21
-                
+
 
 WaitLow:
                 btfsc   INTCON,T0IF             ; if timer 0 overflows then is a DCC zero;12
@@ -315,7 +315,7 @@ ReadBit:
                 rlf     SHIFT0,f                ; receiver shift register               ;15
                 incf    DCCSTATE,f                      ;                                       ;16
                 goto    EndHighHalf             ;                                       ;17,18
-                        
+
 ReadLastBit:
                 bsf     STATUS,C                                                        ;12
                 btfsc   INTCON,T0IF             ; if timer 0 overflows then is a DCC zero;13
@@ -363,7 +363,7 @@ EndByte3x:
                 bsf     NEW_PACKET              ;                                       ;18
                 bcf     DCC4BYTE                ;                                       ;19
                 goto    EndHighHalf             ;                                       ;20,21
-                
+
 EndByte4:
                 btfss   INTCON,T0IF             ; End bit=1, end of packet              ;12
                 goto    EndByte4x               ;                                       ;13,14
@@ -411,14 +411,14 @@ EndByte6:
 BitPos:
                 clrf    PCLATH
                 addwf   PCL,f
-                retlw   b'00000001'             ; 0     
-                retlw   b'00000010'             ; 1     
-                retlw   b'00000100'             ; 2     
-                retlw   b'00001000'             ; 3     
-                retlw   b'00010000'             ; 4     
-                retlw   b'00100000'             ; 5     
-                retlw   b'01000000'             ; 6     
-                retlw   b'10000000'             ; 7     
+                retlw   b'00000001'             ; 0
+                retlw   b'00000010'             ; 1
+                retlw   b'00000100'             ; 2
+                retlw   b'00001000'             ; 3
+                retlw   b'00010000'             ; 4
+                retlw   b'00100000'             ; 5
+                retlw   b'01000000'             ; 6
+                retlw   b'10000000'             ; 7
 
 DecodeCommand:
                 swapf   DATA2,w
@@ -497,16 +497,16 @@ Loop:
                 bcf     PIR1,TMR1IF             ; yes, reload
                 movlw   0xF1
                 movwf   TMR1H
-                
+
                 decfsz  BLIKDIV, f
                 goto    MainLoop
-                
+
 blik:           movf    CV51, w                 ; reload divider
                 movwf   BLIKDIV
-                
+
                 movlw   BLIK_FLAG               ; toggle blik bit state
-                xorwf   FLAGS2                  ; 
-                
+                xorwf   FLAGS2                  ;
+
                 ;                               ; refresh outputs
                 call    Func_make
 
@@ -516,7 +516,7 @@ blik:           movf    CV51, w                 ; reload divider
 ; ----------------------------------------------------------------------
 
 ; ----------------------------------------------------------------------
-                
+
 Decode:
                 bcf     INTCON,GIE              ; disable interrupts for more speed
                 bcf     NEW_PACKET              ; prepare for next packet
@@ -531,7 +531,7 @@ Decode:
                 btfss   STATUS,Z                ; valid packet?
                 goto    ExitDecode              ; no, return
 
-                movf    DATA1,w 
+                movf    DATA1,w
                 btfss   DATA1,7                 ; address = '1XXXXXXX' ?
                 goto    ShortAddr
 
@@ -565,7 +565,7 @@ ChkCons:
 
 ShortAddr:
                 btfsc   STATUS,Z
-                goto    Broadcast               ; address = '00000000' ?        
+                goto    Broadcast               ; address = '00000000' ?
 
                 btfss   LADRE
                 xorwf   CV1,w
@@ -608,7 +608,7 @@ ExitDecode:
                 bcf     RESET_FLG
                 bsf     INTCON,GIE              ; enable interrupts
                 return
-                
+
 ResetDec:
                 bcf     PROG_2X
                 bsf     RESET_FLG
@@ -633,7 +633,7 @@ ConsistControl:
                 movlw   E_CV19
                 call    SetParm
                 goto    ExitDecode
-                
+
 ; ----------------------------------------------------------------------
 
 Advanced:                                       ; (DCC command)
@@ -705,7 +705,7 @@ Speed:
                 call    Lights_check            ; no, 14 speed steps
                 call    Func_make
                 goto    ExitDecode
-                
+
 
 ; ----------------------------------------------------------------------
 
@@ -739,10 +739,10 @@ Function:                                       ; (DCC command)
 Func2:
                 andwf   F1F8SET,w
                 movwf   F1F8SET
-                
+
 Func_make1:     call    Func_make
                 goto    ExitDecode
-                
+
 Func_make:
                 clrf    COUNT
                 clrf    OUTPUT
@@ -753,16 +753,16 @@ FuncSet2:
                 incf    COUNT,f                 ; next
                 btfss   COUNT,3
                 goto    FuncSet
-                
+
                 movf    OUTPUT,w                        ; set real outputs
                 andlw   0x33
                 andlw   0xFE                    ; Disallow output GP0
                 movwf   GPIO
-                
+
                 return
 
                 ;goto    ExitDecode
-                
+
 FuncSet1:
 
                 rlf     COUNT,w
@@ -783,7 +783,7 @@ FuncOn:                                         ; set output if enabled in CV
                 btfsc   BLIK                    ; yes, is BLIK bit set?
                 iorwf   OUTPUT,f
                 return
-                
+
 ;FuncOff:               return
 
 
@@ -801,7 +801,7 @@ Function1:                                      ; (DCC command)
 
 Function2:                                      ; (DCC command)
                                                 ; 1010FFFF (F9-F12)
-                btfss   F9F12                   ; use F9-F12 ?  
+                btfss   F9F12                   ; use F9-F12 ?
                 goto    ExitDecode              ; no, go away
                 movf    DATA2,w                 ; yes, get data
                 andlw   0x0F
@@ -830,7 +830,7 @@ PoM:                                            ; (DCC command)
                 xorwf   DATA2,w
                 btfss   STATUS,Z
                 goto    ExitProg
-                
+
                 movf    DATA3,w                 ; CV1 not valid
                 btfss   CONSIST                 ; consist address not valid
                 btfsc   STATUS,Z
@@ -886,17 +886,17 @@ CheckSM:
                 movf    DATA1,w                         ; 3 byte programming
                 andlw   b'11110111'
                 xorlw   b'01110101'                     ; Reg6
-                btfsc   STATUS,Z                
+                btfsc   STATUS,Z
                 goto    REG6
                 xorlw   (b'01110101')^(b'01110100')     ; Reg5
-                btfsc   STATUS,Z                
+                btfsc   STATUS,Z
                 goto    REG5
                 xorlw   (b'01110100')^(b'01110110')     ; reg7
                 btfsc   STATUS,Z
-                goto    REG7    
+                goto    REG7
                 xorlw   (b'01110110')^(b'01110111')     ; reg8
                 btfsc   STATUS,Z
-                goto    REG8    
+                goto    REG8
 
                 movf    DATA1,w
                 andlw   0x03
@@ -942,7 +942,7 @@ REG8:
                 goto    EEVERI
                 goto    CheckResetCV            ; if CV8 = 33 reset CV
 
-        
+
 EEPROG:
                 btfsc   RDONLY
                 goto    CheckCV8
@@ -997,7 +997,7 @@ CheckResetCVP:
 ExitProg:
                 bsf     INTCON,GIE              ; enable interrupts
                 return
-                
+
 ; -----------------------------------------------------------------------------------
 
 AckPulse:
@@ -1033,7 +1033,7 @@ ChkProg4:
                 btfsc   NOCV
                 goto    ExitProg
 ProgDirect:
-                btfsc   DATA1,3 
+                btfsc   DATA1,3
                 goto    RomNxt
                 btfss   DATA1,2
                 goto    ExitProg                ;00 not defined
@@ -1129,7 +1129,7 @@ LoadNext:
 FindCV:
                 bcf     NOCV                    ; w = CV - 1
                 bcf     RDONLY
-                
+
                 movwf   TEMP
 
                 xorlw   0x00                    ; CV1
@@ -1154,9 +1154,9 @@ FindCV:
                 btfsc   STATUS,Z
                 retlw   E_CV29
 
-                ; agregated CV33 - CV51 
+                ; agregated CV33 - CV51
                 movfw   TEMP
-                sublw   d'33' - 2               ; CV33, 32 - W ... C=0 ... W>=32 ... not in range 
+                sublw   d'33' - 2               ; CV33, 32 - W ... C=0 ... W>=32 ... not in range
                 btfsc   STATUS, C
                 goto    FindCV_1                ; W < CV32
                 movfw   TEMP
@@ -1165,12 +1165,12 @@ FindCV:
                 goto    FindCV_1                ; find address in EEPROM
                 ; CV33 <= W <= CV51
                 movfw   TEMP
-                addlw   0x100 - d'32'            ; W - 32 
+                addlw   0x100 - d'32'            ; W - 32
                 addlw   E_CV33
                 return
-                
+
 FindCV_1:
-                movfw   TEMP                
+                movfw   TEMP
                 bsf     RDONLY
                 xorlw   (0x00 ^ 0x06)           ; CV7
                 btfsc   STATUS,Z
@@ -1306,7 +1306,7 @@ SetParm:
                 xorwf   EEDATA0,w
                 btfsc   STATUS,Z
                 return
-EE_Write:               
+EE_Write:
                 movf    EEDATA0,w
                 bsf     STATUS,RP0
                 movwf   EEDATA
@@ -1360,7 +1360,7 @@ EEWrite0:
 ;               dw      0x00;                   ; CV49
 ;               dw      0x00;                   ; CV50
 ;               dw      0x00;                   ; CV51  blik speed
-                
+
 
                 org     0x2130
 
