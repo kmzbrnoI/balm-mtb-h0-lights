@@ -4,9 +4,9 @@ Osvětlení vozů malý Balm H0
 Tento repozitář obsahuje podklady pro výrobu dekodéru osvětlení vlečných vozů
 Balm firmy MTBmodel.
 
-Osvětlení se skládá z horní desky (<pcb>, montuje se pod strop vozů) a dvou
-čelních desek (<pcb_head>) pro koncová světla. Na horní desce je procesor
-PIC12F629, do kterého se nahrává firmware ze složky <fw>,
+Osvětlení se skládá z horní desky ([pcb](pcb), montuje se pod strop vozů) a dvou
+čelních desek ([pcb-head](pcb-head)) pro koncová světla. Na horní desce je procesor
+PIC12F629, do kterého se nahrává firmware ze složky [fw](fw),
 
 ## Návod k použití
 
