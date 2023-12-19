@@ -12136,7 +12136,7 @@
   (gr_text "NC" (at 150.114 81.153 90) (layer "F.SilkS") (tstamp 0c1f89ce-0c30-4b40-9919-454d5a2b39e2)
     (effects (font (size 1 1) (thickness 0.15)) (justify right))
   )
-  (gr_text "Osvětlení Balm MTB H0\nv2.1 JH 2023 KMŽ Brno I" (at 198.247 89.916) (layer "F.SilkS") (tstamp 2ac31afe-6dde-403d-bbdc-3366c8b144f8)
+  (gr_text "Osvětlení Balm MTB H0\nv2.2 JH 2023 KMŽ Brno I" (at 198.247 89.916) (layer "F.SilkS") (tstamp 2ac31afe-6dde-403d-bbdc-3366c8b144f8)
     (effects (font (size 1.5 1.5) (thickness 0.15)))
   )
   (gr_text "J" (at 78.867 98.552) (layer "F.SilkS") (tstamp 2f680110-9ea0-4f48-b5a6-990648d3cde2)
