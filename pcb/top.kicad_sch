@@ -4326,7 +4326,7 @@
   )
 
   (symbol (lib_id "Device:C_Polarized") (at 108.585 44.45 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom yes) (on_board yes) (dnp yes)
     (uuid 0c1c1d27-c00c-4120-a86c-f0c9d56cebb3)
     (property "Reference" "C10" (at 105.41 44.45 0)
       (effects (font (size 1.27 1.27)) (justify right))
@@ -4384,7 +4384,7 @@
   )
 
   (symbol (lib_id "Device:C_Polarized") (at 108.585 80.01 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom yes) (on_board yes) (dnp yes)
     (uuid 1da618da-31c5-4f6c-bf76-ec2f75f1dc40)
     (property "Reference" "C12" (at 105.41 78.74 0)
       (effects (font (size 1.27 1.27)) (justify right))
@@ -4613,7 +4613,7 @@
   )
 
   (symbol (lib_id "Device:C_Polarized") (at 163.195 44.45 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 72f6effc-5b11-45a7-972c-8aa5d3b8a4e6)
     (property "Reference" "C11" (at 166.116 42.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
