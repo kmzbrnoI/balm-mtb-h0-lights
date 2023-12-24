@@ -7258,6 +7258,8 @@
     )
   )
 
+  (gr_rect (start 194.437 94.742) (end 212.471 102.108)
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp e183ccb1-59e1-4616-84e7-f145858bd86f))
   (gr_line (start 190 90) (end 143 90)
     (stroke (width 0.15) (type solid)) (layer "Dwgs.User") (tstamp 00000000-0000-0000-0000-000061c9d5d4))
   (gr_line (start 190 90) (end 190 83.5)
